@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-commonjs, no-undef
 module.exports = {
   env: {
     browser: true,
@@ -21,9 +22,11 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      modules: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 2019,
     sourceType: 'module',
+    project: 'tsconfig.eslint.json',
   },
   plugins: [
     'react',
@@ -34,11 +37,14 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
+    'react/jsx-one-expression-per-line': 'off',
+
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/array-type': 'warn',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/interface-name-prefix': ['warn', 'always'],
     '@typescript-eslint/member-delimiter-style': [
       'warn',
       {
@@ -125,7 +131,7 @@ module.exports = {
         requireForBlockBody: true,
       },
     ],
-    camelcase: 0,
+    'camelcase': 0,
     'class-methods-use-this': 'off',
     'comma-dangle': [
       'warn',
@@ -138,20 +144,20 @@ module.exports = {
       },
     ],
     'comma-spacing': 'off',
-    complexity: 'off',
+    'complexity': 'off',
     'consistent-return': 'off',
     'constructor-super': 'error',
-    curly: ['error', 'multi-line'],
+    'curly': ['error', 'multi-line'],
     'default-case': 'off',
     'dot-notation': 'error',
     'eol-last': 'off',
-    eqeqeq: ['error', 'smart'],
+    'eqeqeq': ['error', 'smart'],
     'function-paren-newline': 'off',
     'guard-for-in': 'warn',
     'id-blacklist': ['error', 'number', 'string', 'boolean', 'Undefined'],
     'id-match': 'error',
     'implicit-arrow-linebreak': 'off',
-    indent: 'off',
+    'indent': 'off',
     'keyword-spacing': 'off',
     'linebreak-style': 'off',
     'lines-between-class-members': 'off',
@@ -218,14 +224,14 @@ module.exports = {
     'prefer-spread': 1,
     'prefer-template': 'warn',
     'quote-props': 'off',
-    quotes: 'off',
-    radix: 'error',
+    'quotes': 'off',
+    'radix': 'error',
     'sort-keys': 'off',
     'space-before-function-paren': 'off',
     'space-in-parens': ['off', 'never'],
     'spaced-comment': 'warn',
     'use-isnan': 'warn',
     'valid-typeof': 'off',
-    yoda: 'warn',
+    'yoda': 'warn',
   },
 };
