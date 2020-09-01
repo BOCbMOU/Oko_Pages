@@ -1,13 +1,12 @@
 import React from 'react';
 import BigHeader from '../components/BigHeader';
-import Sides from '../components/Sides';
+import PageBack from '../components/PageBack';
 
 const Main = () => {
   return (
-    <>
-      <Sides />
+    <PageBack>
       <BigHeader />
-    </>
+    </PageBack>
   );
 };
 

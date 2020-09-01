@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { defaults } from './consts';
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -9,12 +10,17 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    color: #fff;
+    color: ${defaults.text};
 
-    background-color: #222;
-    background-image: url('/backgrounds/stones.jpg');
+    background-color: #0a0a0a;
+    /* background-image: url('/backgrounds/stones.jpg');
     background-position: center; 
-    background-repeat: repeat;
+    background-repeat: repeat; */
+  }
+
+  a {
+    color: ${defaults.text};
+    text-decoration: none;
   }
 `;
 
@@ -351,7 +357,7 @@ export const ResetStyles = createGlobalStyle`
   input,
   select,
   textarea {
-      color: #222;
+      color: ${defaults.dark2};
   }
 
 
